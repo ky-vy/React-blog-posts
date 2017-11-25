@@ -1,0 +1,76 @@
+.Card {
+  background: rgb(252, 252, 252);
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 25px 20px 20px 20px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.19), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.Panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: 0 30px;
+}
+
+.Panel div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+}
+
+.Panel div .btn {
+  width: 100px;
+}
+
+.Panel div .btn:last-child {
+  justify-self: end;
+}
+
+.Panel div .Panel h2 {
+  margin-top: 20px;
+}
+
+.Title1 {
+  padding: 0;
+  text-align: center;
+}
+
+.Categories {
+  margin: 0;
+}
+
+.PostContent {
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 410px) {
+  .Panel {
+    margin: 0;
+  }
+
+  .Panel div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    justify-items: center;
+  }
+  .Panel div .btn:last-child {
+    justify-self: center;
+  }
+  .Card {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 25px 0 0 0;
+    padding: 0;
+  }
+  .PostContent {
+    margin-bottom: 25px;
+  }
+}

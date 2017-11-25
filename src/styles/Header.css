@@ -1,0 +1,39 @@
+.Colored {
+  /*background: linear-gradient(to right, #5a8ddd 1%, #83a2ea 100%);*/
+  background: linear-gradient(to right, #3a74e8 0%, #3aaef2 100%);
+  margin-bottom: 20px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+  color: rgb(240, 240, 240);
+  min-height: 25px;
+}
+
+.logo {
+  justify-self: start;
+  color: white;
+}
+
+@media (max-width: 410px) {
+  header {
+    margin-bottom: 15px;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+  }
+  .logo {
+    justify-self: center;
+    text-align: center;
+  }
+  .header .btn1 {
+    justify-self: center;
+    margin: 0;
+  }
+}

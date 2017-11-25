@@ -1,0 +1,85 @@
+a {
+  text-decoration: none;
+  color: #222;
+  text-align: center;
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.nonselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.btn {
+  background: #3aaef2;
+  color: rgb(251, 251, 251);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  z-index: 10;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  transform: scale(1.1);
+  padding: 6px;
+  font-weight: bold;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 12px;
+}
+
+.btn:hover {
+  background: rgb(251, 251, 251);
+  color: rgb(89, 89, 89);
+  /*border: 1px solid rgb(204, 204, 204);*/
+  border-radius: 4px;
+  height: auto;
+
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transform: scale(1);
+  transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn1 {
+  border: 2px solid rgb(210, 252, 0);
+  height: auto;
+  width: auto;
+  padding: 0 6px;
+  margin-right: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  justify-self: end;
+}
+
+.btn1 a {
+  font-size: 14px;
+  padding: 6px 0;
+  display: inline-block;
+  width: 100%;
+  color: white;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+  }
+}

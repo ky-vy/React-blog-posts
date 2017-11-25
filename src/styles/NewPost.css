@@ -1,0 +1,85 @@
+.NewPost {
+  color: rgb(247, 247, 247);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  /*background: linear-gradient(to right, #5a8ddd 1%, #83a2ea 100%);*/
+  background: linear-gradient(to right, #3a74e8 0%, #3aaef2 100%);
+}
+
+.NewPost > .container {
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom: 50px;
+}
+
+.NewPost form {
+  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  width: 85%;
+  margin: auto;
+}
+
+.label {
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.text-help {
+  text-align: center;
+}
+
+.NewPost form a,
+.NewPost form button,
+.NewPost form input,
+.NewPost form textarea {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.NewPost form input:focus,
+.NewPost form textarea:focus {
+  outline: 4px solid rgb(105, 105, 105);
+}
+
+.NewPost form textarea {
+  height: 200px;
+  resize: none;
+}
+
+.NewPost form .btn-form {
+  font-size: 16px;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: none;
+  color: rgb(247, 247, 247);
+  border: 3px solid rgb(210, 252, 0);
+  border-radius: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.Danger {
+  color: rgb(210, 252, 0);
+}
+
+@media (min-width: 1000px) {
+  .NewPost > .container {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 50px;
+  }
+}
