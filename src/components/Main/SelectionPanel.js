@@ -12,15 +12,8 @@ class DeleteMode extends Component {
     this.props.delCancel()
   }
 
-  onDelModeActivate = () => this.props.delModeActivate()
-
   onDelSelectAll = () => this.props.delSelectAll(this.props.posts)
-
-  onSelectNone = () => this.props.delSelectClear()
-
-  onDelCancel = () => this.props.delCancel()
-
-  onDelSubmit = () => this.props.deleteListSubmit()
+  //event handler for function with parameter not to create a new function every time in render
 
   selectedAll = () => {
     const { deleteList } = this.props.deleteMode
@@ -34,7 +27,7 @@ class DeleteMode extends Component {
 
   renderQuickSelectButton = () =>
     this.selectedAll() ? (
-      <button className="btnSelectNone" onClick={this.onSelectNone}>
+      <button className="btnSelectNone" onClick={this.props.delSelectClear}>
         All selected
       </button>
     ) : (
@@ -44,21 +37,22 @@ class DeleteMode extends Component {
     )
 
   renderPanelButtons() {
-    const { deleteModeActive } = this.props.deleteMode
+    const { deleteMode: { deleteModeActive } } = this.props
+    const { delModeActivate, delCancel, deleteListSubmit } = this.props
 
     return deleteModeActive ? (
       <div className="DeleteButtons">
-        <button className="btn" onClick={this.onDelCancel}>
+        <button className="btn" onClick={delCancel}>
           Cancel
         </button>
         {this.renderQuickSelectButton()}
-        <button className="btn" onClick={this.onDelSubmit}>
+        <button className="btn" onClick={deleteListSubmit}>
           Delete
         </button>
       </div>
     ) : (
       <div className="Manage">
-        <button className="btn" onClick={this.onDelModeActivate}>
+        <button className="btn" onClick={delModeActivate}>
           Manage
         </button>
       </div>

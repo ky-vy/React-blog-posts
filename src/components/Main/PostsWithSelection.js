@@ -38,8 +38,6 @@ class PostsWithDelMode extends Component {
 
   onHover = e => this.props.hover(e.target.dataset.id)
 
-  onSelectFinish = () => this.props.selectFinish()
-
   renderItems() {
     const items = _.map(this.props.posts, post => {
       const p = this.props.deleteMode
@@ -83,10 +81,11 @@ class PostsWithDelMode extends Component {
   }
 
   render() {
+    const { selectFinish } = this.props
     return (
       <ul
-        onMouseUp={this.onSelectFinish}
-        onMouseLeave={this.onSelectFinish}
+        onMouseUp={selectFinish}
+        onMouseLeave={selectFinish}
         className="List-group">
         {this.renderItems()}
       </ul>
