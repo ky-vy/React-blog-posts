@@ -42,7 +42,7 @@ class PostsWithDelMode extends Component {
     const items = _.map(this.props.posts, post => {
       const p = this.props.deleteMode
       const className =
-        post.id in p.deleteList
+        post.id in p.selectionList
           ? 'List-group-item Selected'
           : post.id in p.delIconHovered
             ? 'List-group-item DelHovered'

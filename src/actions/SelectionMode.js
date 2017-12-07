@@ -19,23 +19,23 @@ export const delIconLeave = id => ({
   payload: id
 })
 
-export const delModeActivate = () => ({ type: ACTIVATED })
+export const selModeActivate = () => ({ type: ACTIVATED })
 
-export const delCancel = () => ({ type: CANCELED })
+export const selModeDeactivate = () => ({ type: CANCELED })
 
-export const delSelectAll = posts => ({
+export const selectAll = posts => ({
   type: SELECTED_ALL,
   payload: posts
 })
 
-export const delSelectClear = () => {
+export const selectNone = () => {
   return { type: SELECTED_NONE }
 }
 
 export const selectStart = id => {
   return (dispatch, getState) => {
-    const { deleteList } = getState().deleteMode
-    const selected = id in deleteList
+    const { selectionList } = getState().deleteMode
+    const selected = id in selectionList
     const active = getState().deleteMode.deleteModeActive
 
     if (active) {

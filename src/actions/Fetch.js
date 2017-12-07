@@ -53,9 +53,9 @@ export const deletePost = (id, callback) => {
 
 //With the "delete all" request this complex function wouldn't be needed, but it
 //can be considered as an example of dealing with complex asynchronus functions.
-export const deleteListSubmit = () => {
+export const selectionListSubmit = () => {
   return (dispatch, getState) => {
-    const posts = getState().deleteMode.deleteList
+    const posts = getState().deleteMode.selectionList
 
     function request(id, timeout, times) {
       return axios.delete(ROOT_URL + '/' + id + API_KEY).then(

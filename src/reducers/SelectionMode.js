@@ -19,14 +19,14 @@ export default (
     deleteModeActive: false,
     mouseDown: false,
     markAsSelected: true,
-    deleteList: {},
+    selectionList: {},
     delIconHovered: {}
   },
   action
 ) => {
   const id = action.payload
-  const deleteList_select = { ...state.deleteList, [id]: Number(id) }
-  const deleteList_deselect = _.omit(state.deleteList, id)
+  const selectionList_select = { ...state.selectionList, [id]: Number(id) }
+  const selectionList_deselect = _.omit(state.selectionList, id)
 
   switch (action.type) {
     case DEL_ICON_HOVERED:
@@ -42,31 +42,31 @@ export default (
       return {
         ...state,
         deleteModeActive: false,
-        deleteList: {}
+        selectionList: {}
       }
 
     case SELECTED_ALL:
-      const deleteList_all = {}
+      const selectionList_all = {}
       _.map(action.payload, post => {
-        return (deleteList_all[post.id] = post.id)
+        return (selectionList_all[post.id] = post.id)
       })
 
-      return { ...state, deleteList: deleteList_all }
+      return { ...state, selectionList: selectionList_all }
 
     case SELECTED_NONE:
-      return { ...state, deleteList: {} }
+      return { ...state, selectionList: {} }
 
     case DEL_LIST_SUBMITTED:
       return {
         ...state,
         deleteModeActive: false,
-        deleteList: {}
+        selectionList: {}
       }
 
     case SELECT_STARTED_CHECK:
       return {
         ...state,
-        deleteList: deleteList_select,
+        selectionList: selectionList_select,
         markAsSelected: true,
         mouseDown: true
       }
@@ -74,15 +74,15 @@ export default (
     case SELECT_STARTED_UNCHECK:
       return {
         ...state,
-        deleteList: deleteList_deselect,
+        selectionList: selectionList_deselect,
         markAsSelected: false,
         mouseDown: true
       }
 
     case SELECT_HOVERED:
       return state.markAsSelected
-        ? { ...state, deleteList: deleteList_select }
-        : { ...state, deleteList: deleteList_deselect }
+        ? { ...state, selectionList: selectionList_select }
+        : { ...state, selectionList: selectionList_deselect }
 
     case SELECT_FINISHED:
       return { ...state, mouseDown: false }
